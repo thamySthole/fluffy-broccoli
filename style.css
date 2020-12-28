@@ -1,0 +1,159 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+/*nav bar*/
+
+.nav-bar{
+  width:378px;
+  height:50px;
+  background:#3e60f8;
+  display:inline-flex;
+}
+
+.nav-bar > div{
+  width:50px;
+  height:40px;
+  margin: 5px 0 5px 5px;
+  display: block;
+}
+
+.panels{
+  margin: 5px 5px 2px 5px;
+  border-top-left-radius: 5px ;
+  transition:0.7s;
+  border-top-right-radius: 5px ;
+  border-bottom-right-radius: 5px ;
+  border-bottom-left-radius: 5px ;
+  width:40px;
+  height:7px;
+  background:#a5f8d9;
+}
+
+.nav-bar > div:hover .panels:first-child{
+  margin-top: 14px;
+  margin-bottom:-9px;
+  transform: rotate(140deg);
+  display: block;
+}
+
+.nav-bar > div:hover .hide{
+  display: none;
+}
+
+.nav-bar > div:hover .panels:last-child{
+  display: block;
+  margin-top:-9px;
+  transform: rotate(-140deg);
+}
+
+/*h1 styles*/
+
+.nav-bar > h1{
+  color:white;
+  margin: 20px -50px 10px 100px;
+  text-shadow: 1px 0px 1px #6775f8;
+}
+
+/*end of nav bar code*/
+
+body{
+  transition:9.2s;
+}
+
+/*aside*/
+aside{
+  display:none;
+}
+.aside{
+  position: relative;
+  width:160px;
+  height:600px;
+  background:#679df8;
+}
+.aside > div{
+  position: relative;
+  width:140px;
+  height:50px;
+  font-size: 1.6rem;
+  color:white;
+  top:10px;
+  left:20px;
+}
+
+.aside > div:active{
+  text-shadow:0.9px 0px white;
+  box-shadow: 0px 1px white;
+}
+
+.close{
+  width:20px;
+  left:130px;
+}
+/*end nav*/
+
+/* start accounts */
+.account-content{
+  margin: auto;
+  padding: auto;
+  width:368px;
+  height:950px;
+  background:#fff;
+  border: 3px solid;
+  /*the display property should be none*/
+  display: none;
+}
+.account-content > h2 {
+  text-align: center;
+}
+
+.p{
+  color:grey;
+}
+
+.append-forms{
+  text-align: center;
+  vertical-align: center;
+  font-family: verdana,Arial;
+  font-size:20px;
+  color: white;
+  padding-top: 60px;
+  opacity: 0.9;
+}
+.log-in , .sign-up{
+  position: :fixed;
+  width:140px;
+  height: 40px;
+  margin-left:20px;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+}
+input[type=text] {
+    width: 280px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-size: 19px;
+    border: 2px solid;
+    border-radius: 2px;
+    box-sizing: border-box;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    outline: none;
+    line-height: 10px;
+}
+
+.sign{
+  width:240px;
+  max-height:300px;
+  margin-top: 50px;
+  margin-left: 35px;
+}
+
+/* end accounts */
+
+a{
+  text-decoration: none;
+  color: white;
+}
