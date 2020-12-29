@@ -1,46 +1,275 @@
-let log = console.log;
+let btn_divs = document.querySelectorAll('.ii'),
+  result = document.querySelector('.res'),
+  comp = document.querySelector('.compScore'),
+  player = document.querySelector('.playerScore'),
+  display = document.querySelectorAll('.answer'),
+    log = console.log;
 
-//nav 
-let navBtn = document.querySelector('.nav-btn');
-let closePanel = document.querySelector('.close');
-let panel = document.querySelector('#panel');
-let aside = document.querySelector('aside');
+/*btn_divs[0].addEventListener("click", rock_funtion);*/
 
-navBtn.addEventListener('click', addClass);
-closePanel.addEventListener('click', close_panel);
 
-function addClass() {
-  // body..
-  aside.style.display ="block";
-  panel.classList.add('aside');
-}
-function close_panel() {
-  // body..
-  aside.style.display ="none";
-  panel.classList.remove('aside');
-}
+btn_divs[0].addEventListener("click", rock_funtion);
+btn_divs[1].addEventListener("click", paper_funtion);
+btn_divs[2].addEventListener("click", scissors_funtion);
 
-//main page for appending
-let appendChilds = document.querySelector(".back-page")
 
-//pages 
+btn_divs[0].value = "rock";
+btn_divs[1].value = "paper";
+btn_divs[2].value = "scissors";
 
-let home = document.querySelector(".H"),
-    games = document.querySelector(".G"),
-    apis = document.querySelector('.Api'),
-    log_sign = document.querySelector(".A"),
-    cont = document.querySelector(".C");
+  
+  let compChoice = [
+    btn_divs[0].value, 
+    btn_divs[1].value,
+    btn_divs[2].value
+    ];
     
+  let pScore = 0;
+  let cScore = 0;
+  
+  //rock function
     
-home.addEventListener("click", f);
-games.addEventListener("click", f);
-apis.addEventListener("click", f);
-log_sign.addEventListener("click", f);
-cont.addEventListener("click", f);
-
-function f(){
-    aside.style.display ="none";
-  panel.classList.remove('aside');
+function rock_funtion(){
+  let ran = Math.floor(Math.random()*compChoice.length)
+  let r = btn_divs[0].value ;
+  
+ if(compChoice[ran] === r ){
+    display[0].innerHTML = compChoice[ran];
+    display[1].innerHTML = r;
+    result.innerHTML = "draw";
+    pScore +=1;
+    cScore +=1;
+    
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+    
+ 
+    if(comp.innerHTML > 5 || player.innerHTML > 5)
+    {
+     if(comp.innerHTML === 5){
+       alert("computer wins")
+     }else if(player.innerHTML === 5){
+       alert ("wow you won")
+     }
+      pScore = 0;
+      cScore = 0;
+      
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+    
+    }
+    
+ }else if(compChoice[ran] === "paper" && r != "paper"){
+    display[0].innerHTML = compChoice[ran];
+    display[1].innerHTML = r;
+    result.innerHTML = "lost"
+    pScore +=0;
+    cScore +=1;
+    
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+        if(comp.innerHTML > 5 || player.innerHTML > 5)
+    {
+     if(comp.innerHTML === 5){
+       alert("computer wins")
+     }else if(player.innerHTML === 5){
+       alert ("wow you won")
+     }
+      pScore = 0;
+      cScore = 0;
+      
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+    
+    }
+    
+ }else if(compChoice[ran] === "scissors" && r != "scissors"){
+    display[0].innerHTML = compChoice[ran];
+    display[1].innerHTML = r;
+    result.innerHTML = "won"
+    pScore +=1;
+    cScore +=0;
+    
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+        if(comp.innerHTML > 5 || player.innerHTML > 5)
+    {
+     if(comp.innerHTML === 5){
+       alert("computer wins")
+     }else if(player.innerHTML === 5){
+       alert ("wow you won")
+     }
+      pScore = 0;
+      cScore = 0;
+      
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+    
+    }
+    
 }
  
  
+}
+function paper_funtion(){
+  let ran = Math.floor(Math.random()*compChoice.length)
+  let r = btn_divs[1].value;
+  
+ if(compChoice[ran] === r ){
+    display[0].innerHTML = compChoice[ran];
+    display[1].innerHTML = r;
+    result.innerHTML = "draw";
+    pScore +=1;
+    cScore +=1;
+    
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+        if(comp.innerHTML > 5 || player.innerHTML > 5)
+    {
+     if(comp.innerHTML === 5){
+       alert("computer wins")
+     }else if(player.innerHTML === 5){
+       alert ("wow you won")
+     }
+      pScore = 0;
+      cScore = 0;
+      
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+    
+    }
+    
+ }else if(compChoice[ran] === "scissors" && r == "paper"){
+    display[0].innerHTML = compChoice[ran];
+    display[1].innerHTML = r;
+    result.innerHTML = "lost"
+    pScore +=0;
+    cScore +=1;
+    
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+        if(comp.innerHTML > 5 || player.innerHTML > 5)
+    {
+     if(comp.innerHTML === 5){
+       alert("computer wins")
+     }else if(player.innerHTML === 5){
+       alert ("wow you won")
+     }
+      pScore = 0;
+      cScore = 0;
+      
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+    
+    }
+    
+ }else if(compChoice[ran] === "rock" && r == "paper"){
+    display[0].innerHTML = compChoice[ran];
+    display[1].innerHTML = r;
+    result.innerHTML = "won"
+    pScore +=1;
+    cScore +=0;
+    
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+        if(comp.innerHTML > 5 || player.innerHTML > 5)
+    {
+     if(comp.innerHTML === 5){
+       alert("computer wins")
+     }else if(player.innerHTML === 5){
+       alert ("wow you won")
+     }
+      pScore = 0;
+      cScore = 0;
+      
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+    
+    }
+    
+}
+ 
+ 
+}
+
+function scissors_funtion(){
+  let ran = Math.floor(Math.random()*compChoice.length)
+  let r = btn_divs[2].value;
+  
+ if(compChoice[ran] === r ){
+    display[0].innerHTML = compChoice[ran];
+    display[1].innerHTML = r;
+    result.innerHTML = "draw";
+    pScore +=1;
+    cScore +=1;
+    
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+        if(comp.innerHTML > 5 || player.innerHTML > 5)
+    {
+     if(comp.innerHTML === 5){
+       alert("computer wins")
+     }else if(player.innerHTML === 5){
+       alert ("wow you won")
+     }
+      pScore = 0;
+      cScore = 0;
+      
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+    
+    }
+    
+ }else if(compChoice[ran] === "rock" && r == "scissors"){
+    display[0].innerHTML = compChoice[ran];
+    display[1].innerHTML = r;
+    result.innerHTML = "lost"
+    pScore +=0;
+    cScore +=1;
+    
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+        if(comp.innerHTML > 5 || player.innerHTML > 5)
+    {
+     if(comp.innerHTML === 5){
+       alert("computer wins")
+     }else if(player.innerHTML === 5){
+       alert ("wow you won")
+     }
+      pScore = 0;
+      cScore = 0;
+      
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+    
+    }
+    
+    
+ }else if(compChoice[ran] === "paper" && r === "scissors"){
+    display[0].innerHTML = compChoice[ran];
+    display[1].innerHTML = r;
+    result.innerHTML = "won"
+    pScore +=1;
+    cScore +=0;
+    
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+        if(comp.innerHTML > 5 || player.innerHTML > 5)
+    {
+     if(comp.innerHTML > 5){
+       alert("computer wins")
+     }else if(player.innerHTML === 5){
+       alert ("wow you won")
+     }
+      pScore = 0;
+      cScore = 0;
+      
+    comp.innerHTML = cScore;
+    player.innerHTML = pScore;
+    
+    }
+    
+}
+ 
+ 
+}
